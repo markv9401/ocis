@@ -19,6 +19,7 @@ The following sections list the changes for unreleased.
 * Bugfix - Disable cache for selected static web assets: [#4809](https://github.com/owncloud/ocis/pull/4809)
 * Bugfix - Fix unfindable entities from shares/publicshares: [#4651](https://github.com/owncloud/ocis/pull/4651)
 * Bugfix - Graph service now forwards trace context: [#4582](https://github.com/owncloud/ocis/pull/4582)
+* Bugfix - Fix the shareroot path in REPORT responses: [#4859](https://github.com/owncloud/ocis/pull/4859)
 * Bugfix - Remove the storage-users event configuration: [#4825](https://github.com/owncloud/ocis/pull/4825)
 * Bugfix - Trigger a rescan of spaces in the search index when items have changed: [#4777](https://github.com/owncloud/ocis/pull/4777)
 * Bugfix - Make tokeninfo endpoint unprotected: [#4715](https://github.com/owncloud/ocis/pull/4715)
@@ -31,6 +32,7 @@ The following sections list the changes for unreleased.
 * Enhancement - Add support for REPORT requests to /dav/spaces URLs: [#4661](https://github.com/owncloud/ocis/pull/4661)
 * Enhancement - Allow to configure applications in Web: [#4578](https://github.com/owncloud/ocis/pull/4578)
 * Enhancement - Restrict admins from self-removal: [#3713](https://github.com/owncloud/ocis/issues/3713)
+* Enhancement - Logging improvements: [#4815](https://github.com/owncloud/ocis/pull/4815)
 * Enhancement - Secure the nats connectin with TLS: [#4781](https://github.com/owncloud/ocis/pull/4781)
 * Enhancement - Report parent id: [#4757](https://github.com/owncloud/ocis/pull/4757)
 * Enhancement - Add thumbnails support for tiff and bmp files: [#4634](https://github.com/owncloud/ocis/pull/4634)
@@ -143,6 +145,14 @@ The following sections list the changes for unreleased.
 
    https://github.com/owncloud/ocis/pull/4582
 
+* Bugfix - Fix the shareroot path in REPORT responses: [#4859](https://github.com/owncloud/ocis/pull/4859)
+
+   Fixed the shareroot path in REPORT responses. Before this change the attribute leaked part of
+   the folder tree of the sharer.
+
+   https://github.com/owncloud/ocis/issues/4796
+   https://github.com/owncloud/ocis/pull/4859
+
 * Bugfix - Remove the storage-users event configuration: [#4825](https://github.com/owncloud/ocis/pull/4825)
 
    We've removed the events configuration from the storage-users section because it is not
@@ -228,6 +238,13 @@ The following sections list the changes for unreleased.
 
    https://github.com/owncloud/ocis/issues/3713
 
+* Enhancement - Logging improvements: [#4815](https://github.com/owncloud/ocis/pull/4815)
+
+   We improved the logging of several http services. If possible and present, we now log the
+   `X-Request-Id`.
+
+   https://github.com/owncloud/ocis/pull/4815
+
 * Enhancement - Secure the nats connectin with TLS: [#4781](https://github.com/owncloud/ocis/pull/4781)
 
    Encyrpted the connection to the event broker using TLS.
@@ -256,6 +273,7 @@ The following sections list the changes for unreleased.
    https://github.com/owncloud/ocis/pull/4716
    https://github.com/owncloud/ocis/pull/4719
    https://github.com/owncloud/ocis/pull/4750
+   https://github.com/owncloud/ocis/pull/4833
 
 * Enhancement - Update ownCloud Web to v6.0.0-rc.2: [#4786](https://github.com/owncloud/ocis/pull/4786)
 
